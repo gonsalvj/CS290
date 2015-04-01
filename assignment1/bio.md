@@ -8,3 +8,5 @@ Favorite Animal: Cats
 Programming Background
 Programming Education: Post Grad Cert. Web Dev, BSc. Computer Science (pending)
 Professional Programming Experience: .NET developer
+
+Alternate Disclaimer: This is assignment one of a Web Development course.
