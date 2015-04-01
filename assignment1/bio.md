@@ -4,3 +4,4 @@ Hobbies: see interests.
 
 Programming Background
 Programming Education: Post Grad Cert. Web Dev, BSc. Computer Science (pending)
+Professional Programming Experience: .NET developer
