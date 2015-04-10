@@ -47,6 +47,7 @@ Added padding - not in instructions.
 	padding: 10px;
 }
 
+/*Its background should be blue.It should take up 3/4 of the parent divs width and should be centered.*/
 .inner-content {
 	background-color: blue;
 	width: 75%;
@@ -55,6 +56,8 @@ Added padding - not in instructions.
 	margin-left: auto;
 	margin-right: auto;
 }
+
+/*Have an image that is 100x125px sit in the upper left of those two paragraphs that the text wraps around.*/
 img {
 	margin: 5px;
 	float: left;
