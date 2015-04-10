@@ -1,0 +1,64 @@
+/*Not explicitly in assignment instructions, but shown in example video*/
+ table, th, td{ 
+  border: 1px solid gray; 
+  } 
+
+ /* The first column of the table should have header cells that have italic text. (These should not be bold) */
+tbody tr th{
+	font-style: italic;
+	font-weight: normal;
+}
+
+ /* The first non-header cell of each non-header row should have 'red' text.*/
+tbody td:first-of-type {
+	color: red;
+}
+
+/*The third non-header cell of each non-header row should have 'blue' text.*/
+tbody td:nth-of-type(3)
+{
+	color:blue;
+}
+
+/*Odd non-header/footer rows should have a light green background.*/
+tbody tr:nth-of-type(odd)
+{
+	background-color: lightgreen;
+}
+/*Even non-header/footer rows should have a light blue background*/
+tbody tr:nth-of-type(even)
+{
+	background-color: lightblue;
+}
+
+/*When you hover over a dt entry, its dd item should get a purple background.*/
+dt:hover +dd{
+	background-color: purple;
+}
+
+/*Create a div that is aligned to the left side of the page and takes up 3/4 of the page width, has a space of 20px between it and the previous element.
+Added padding - not in instructions.
+*/
+.outer-content {
+
+	width: 75%;
+	background-color: pink;
+	margin-top: 20px;
+	padding: 10px;
+}
+
+.inner-content {
+	background-color: blue;
+	width: 75%;
+	text-align: center;
+	position: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+img {
+	margin: 5px;
+	float: left;
+	height: 100px;
+	width: 125px;
+	
+}
