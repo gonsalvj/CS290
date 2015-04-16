@@ -13,8 +13,7 @@
 */
 
 //your code here
-function uselessFunction()
-{
+function uselessFunction() {
 	return null;
 }
 //end your code
@@ -37,7 +36,7 @@ bar = function(doubleArray)
 {
 	for (var i=0; i<doubleArray.length; i++)
 	{
-		if(isNan(parseFloat(doubleArray[i]))
+		if(isNaN(parseFloat(doubleArray[i])))
 		{
 			return false;
 		}
@@ -84,7 +83,7 @@ function parseGit(logArray)
 {
 	var GitLogArray = [];
 	var gitObj;
-	for(int i=0; i<logArray.length; i++)
+	for(var i=0; i<logArray.length; i++)
 	{
 		var firstSpace= logArray[i].indexOf(" ");
 		var firstQuote= logArray[i].indexOf('"');
