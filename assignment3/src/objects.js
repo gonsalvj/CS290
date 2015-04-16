@@ -11,11 +11,11 @@
 function returnObjectLiteral() {
   //your code here
   var obj={
-  		type: "Goldfish",
-  		brand: "Pepperidge Farm",
-  		flavor: "Cheddar",
-  		count: 2000;
-  }; 
+  		type: 'Goldfish',
+  		brand: 'Pepperidge Farm',
+  		flavor: 'Cheddar',
+  		count: 2000
+  };
   return obj;
   //end your code
 }
@@ -44,6 +44,10 @@ function returnObjectLiteral() {
 */
 
 //your code here
+function MessageLog(user)
+{
+	this.user = user;
+}
 
 //end your code
 
