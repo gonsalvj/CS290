@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CS290 Assignment 3 Part 2</title>
+		<script src="assignment3part2.js"></script>
+	</head>
+	<body>
+		<form>
+				<fieldset>
+				<legend>Gists Search:</legend> 
+				  Number of Pages:
+		          <br />
+		          <br />
+		          <select id="ddlPages">
+		          <option value="1" selected="selected">1</option>
+		          <option value="2">2</option>
+		          <option value="3">3</option>
+		          <option value="4">4</option>
+		          <option value="5">5</option>
+		          </select>
+		          <hr>
+				  Language:
+		          <br />
+		          <br />				
+		          <input type="checkbox" name="language" value="Python" />Python<br />
+		          <input type="checkbox" name="language" value="JSON" />JSON<br />
+		          <input type="checkbox" name="language" value="JavaScript" />JavaScript<br />
+		          <input type="checkbox" name="language" value="SQL" />SQL<br />
+		          <hr>
+
+		         <button type="button" onclick='getGistResults()'>Search</button>
+				</fieldset>
+		</form>
+		
+	</body>
+</html>
