@@ -1,0 +1,50 @@
+-------------------
+Assignment 3 Part 1
+-------------------
+
+Start: Sun, 19 Apr 2015 20:45:00 -0400
+End: Sun, 19 Apr 2015 22:39:29 -0400
+Tasks: updated object functions - all tests passing
+
+Start:Wed, 15 Apr 2015 20:00:00 -0400
+End: Wed, 15 Apr 2015 22:31:13 -0400
+Tasks: Added untested returnObject Literal and MessageLogConstructor
+Tasks: updated functions to pass all tests
+Tasks: updated variables to pass tests
+Tasks: added parseGit function
+
+Start: Tue, 14 Apr 2015 19:30:00 -0400
+End: Tue, 14 Apr 2015 21:55:26 -0400
+Tasks: incomplete untested functions and objects functionality
+Tasks: added untested variable functionality
+
+Start: Mon, 13 Apr 2015 21:30:00 -0400
+End: Mon, 13 Apr 2015 21:51:52 -0400
+Tasks: Commiting clone repo, Looked at files
+
+-------------------
+Assignment 3 Part 2
+-------------------
+
+Start: Sun, 26 Apr 2015 9:50:00 -0400
+End: Sun, 26 Apr 2015 10:47:11 -0400
+Tasks: updated files to pass W3C Validator
+Tasks: updated to include no language selected logic
+Tasks: Testing
+
+Start: Sat, 25 Apr 2015 23:50:00 -0400
+End: Sun, 26 Apr 2015 00:08:20 -0400
+Tasks: added language filtering logic, still needs testing
+
+Start: Sat, 25 Apr 2015 10:30:44 -0400
+End: Sat, 25 Apr 2015 23:46:44 -0400
+Tasks: Added all functionality but filtering
+
+Start: Thu, 23 Apr 2015 13:30:00 -0400
+End: Thu, 23 Apr 2015 22:33:38 -0400
+Tasks: added html for sgists search and filter and js ajax call
+Tasks: Worked on traversing JSON object returned by api
+
+Start: Wed, 22 Apr 2015 19:00:00 -0400
+End: Wed, 22 Apr 2015 22:33:38 -0400
+Tasks: added html for sgists search and filter and js ajax call
