@@ -10,13 +10,13 @@
 
 function returnObjectLiteral() {
   //your code here
-  var obj={
-  		type: 'Goldfish',
-  		brand: 'Pepperidge Farm',
-  		flavor: 'Cheddar',
-  		count: 2000
-  };
-  return obj;
+    var obj = {
+        type: 'Goldfish',
+        brand: 'Pepperidge Farm',
+        flavor: 'Cheddar',
+        count: 2000
+    };
+    return obj;
   //end your code
 }
 
@@ -44,47 +44,41 @@ function returnObjectLiteral() {
 */
 
 //your code here
-function MessageLog(user)
-{
-	this.user = user;
-  this.sentMessages = [];
-  this.receivedMessages = [];
-  this.numInSentQueue=0;
-  this.numSent=0;
-  this.numReceived=0;
-  this.logMessage = function(messageText, direction) { 
+function MessageLog(user) {
+    this.user = user;
+    this.sentMessages = [];
+    this.receivedMessages = [];
+    this.numInSentQueue = 0;
+    this.numSent = 0;
+    this.numReceived = 0;
+    this.logMessage = function (messageText, direction) { 
+        if (direction === 0) {
+            if (this.numInSentQueue > 4) {
+                this.sentMessages.pop();
+                this.numInSentQueue--;
+            }
+            this.sentMessages.unshift(messageText);  
+            this.numInSentQueue++;
+            this.numSent++;    
+        }
+        else if (direction === 1) {
+            this.receivedMessages.unshift(messageText);
+            this.numReceived++;
+        }    
+    };
 
-    if(direction === 0) 
-    {
-      if(this.numInSentQueue>4)
-      {
-        this.sentMessages.pop();
-        this.numInSentQueue--;
-      }
-      this.sentMessages.unshift(messageText);  
-      this.numInSentQueue++;
-      this.numSent++;    
-    }
-    else if(direction === 1)
-    {
-      this.receivedMessages.unshift(messageText);
-      this.numReceived++;
-    }    
-  };
+    this.getSentMessage = function(n)  {
+        return this.sentMessages[n];
+    };
 
-  this.getSentMessage = function(n)  {
-    return this.sentMessages[n];
-  };
+    this.totalSent = function() {
+        return this.numSent;
+    };
 
-  this.totalSent = function() {
-    return this.numSent;
-  };
-
-  this.totalReceived = function() {
-    return this.numReceived;
-  };
+    this.totalReceived = function() {
+        return this.numReceived;
+    };
 }
-
 //end your code
 
 /**
