@@ -6,7 +6,7 @@ W3 Specifiation of HTML5 Web Storage
 Getting started with Ajax
 Stackoverflow
 */
-
+var favoriteGists = [];
 var searchResultGists = [];
 var selectedlanguages = [];
 
