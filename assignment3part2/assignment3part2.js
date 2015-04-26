@@ -63,12 +63,15 @@ function getGistResults() {
     fetchData(reqObject);
 }	
 
-function isSelectedLanguage(files)
-{
+function isSelectedLanguage(files) {
 
+	if (selectedlanguages.length === 0)
+	{
+		return true;
+	}
+	
 	for (var i in files) {
 		for (var j = 0; j < selectedlanguages.length; j++) {
-
 			if(files[i].language === selectedlanguages[j])
 			{
 				return true;
@@ -78,8 +81,7 @@ function isSelectedLanguage(files)
 	return false;
 }
 
-function isFavoriteGist(id)
-{
+function isFavoriteGist(id) {
 	for (var i = 0; i < favoriteGists.length; i++) {
 		if(favoriteGists[i].getId() === id)
 		{
@@ -88,8 +90,8 @@ function isFavoriteGist(id)
 	}
 	return false;
 }
-function fetchData(reqObject) {	 	
 
+function fetchData(reqObject) {	 	
   	for (var i = 1; i <= reqObject.page; i++) {
   		var httpRequest;
 	    if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ ...Note: IE6 not required
@@ -129,6 +131,7 @@ function printData(result) {
     var gistList = JSON.parse(result);
     var context = document.getElementById("divresults");	
     for (var i =0;i < gistList.length; i++) {
+
 	    if((!isFavoriteGist(gistList[i].id)) && (isSelectedLanguage(gistList[i].files))) {
 		    var objGist = new GistObject();
 		    objGist.setId(gistList[i].id);
@@ -197,8 +200,7 @@ function removeFavorite(id) {
 	_setFavorites();
 }
 
-function _deleteCollectionElement(collection, id)
-{
+function _deleteCollectionElement(collection, id) {
 	for (var i = 0; i < collection.length; i++) {
 		if (collection[i].getId() === id) {
 			collection.splice(i, 1);
