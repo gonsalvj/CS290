@@ -26,6 +26,16 @@ Tasks: Commiting clone repo, Looked at files
 Assignment 3 Part 2
 -------------------
 
+Start: Sun, 26 Apr 2015 11:10:00 -0400
+End: Sun, 26 Apr 2015 11:31:49 -0400
+Tasks: updated ajax call to be async
+
+Start: Sun, 26 Apr 2015 9:50:00 -0400
+End: Sun, 26 Apr 2015 10:47:11 -0400
+Tasks: updated files to pass W3C Validator
+Tasks: updated to include no language selected logic
+Tasks: Testing
+
 Start: Sun, 26 Apr 2015 9:50:00 -0400
 End: Sun, 26 Apr 2015 10:47:11 -0400
 Tasks: updated files to pass W3C Validator
