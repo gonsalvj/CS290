@@ -1,4 +1,12 @@
-var favoriteGists = [];
+/*
+Author: Jade Gonsalves
+Assignment: Assignment 3 part 2
+References: Did not 'copy' code from anywhere, but did a LOT of reading from a variety of sources including:
+W3 Specifiation of HTML5 Web Storage
+Getting started with Ajax
+Stackoverflow
+*/
+
 var searchResultGists = [];
 var selectedlanguages = [];
 
@@ -113,8 +121,7 @@ function isFavoriteGist(id) {
 }
 
 function fetchData(reqObject, page) {	 	
-  //	for (var i = 1; i <= reqObject.page; i++) {
-  		var httpRequest;
+   		var httpRequest;
 	    if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ ...Note: IE6 not required
   	        httpRequest = new XMLHttpRequest();
 	    } 
@@ -129,7 +136,7 @@ function fetchData(reqObject, page) {
 		var url = reqObject.url + page;
 		httpRequest.open(reqObject.httpmethod, url);
 		httpRequest.send();
-	//}			
+	
 }
 
 function createGitObjCollection(result, collection) {
