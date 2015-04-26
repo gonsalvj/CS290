@@ -6,6 +6,22 @@ window.onload = function() {
     loadFavoriteGists();
 };
 
+function createGitObjCollection(result, collection) {
+	var gistList = JSON.parse(result);
+    for (var i =0;i < gistList.length; i++) {	    
+	    var objGist = new GistObject();
+	    objGist.setId(gistList[i].id);
+	    objGist.setHtmlURL(gistList[i].html_url);
+	    if(gistList[i].description != "") {
+	    	objGist.setDescription(gistList[i].description);	
+	    }		
+	    else {
+	    	objGist.setDescription("No description provided");
+	    }	    
+	    collection.push(objGist);	   
+    }    
+}
+
 function loadFavoriteGists() {
     if (typeof (Storage) !== "undefined") {
     	var favoriteStr = localStorage.getItem("favorites");
@@ -53,6 +69,7 @@ function GistObject() {
 function getGistResults() {
     var ddl = document.getElementById("ddlPages");
     var page = ddl.options[ddl.selectedIndex].value;
+    selectedlanguages.splice(0,selectedlanguages.length);
     var checkboxes = document.getElementsByName('language');
     for (var i=0; i<checkboxes.length; i++) {
         if (checkboxes[i].checked) {
@@ -63,17 +80,19 @@ function getGistResults() {
     fetchData(reqObject);
 }	
 
+function clearSearchResults() {
+	selectedlanguages.splice(0, selectedlanguages.length);
+	searchResultGists.splice(0, selectedlanguages.length);
+	var element = document.getElementById("divresults");
+	element.innerHTML = "<h2>Gist Search Results</h2>";
+}
 function isSelectedLanguage(files) {
-
-	if (selectedlanguages.length === 0)
-	{
+	if (selectedlanguages.length === 0)	{
 		return true;
 	}
-	
 	for (var i in files) {
 		for (var j = 0; j < selectedlanguages.length; j++) {
-			if(files[i].language === selectedlanguages[j])
-			{
+			if(files[i].language === selectedlanguages[j]) {
 				return true;
 			}
 		}
@@ -116,13 +135,13 @@ function createGitObjCollection(result, collection) {
     for (var i =0;i < gistList.length; i++) {	    
 	    var objGist = new GistObject();
 	    objGist.setId(gistList[i].id);
+	    objGist.setHtmlURL(gistList[i].html_url);
 	    if(gistList[i].description != "") {
 	    	objGist.setDescription(gistList[i].description);	
 	    }		
 	    else {
 	    	objGist.setDescription("No description provided");
-	    }
-	    objGist.setHtmlURL(gistList[i].html_url);
+	    }	    
 	    collection.push(objGist);	   
     }    
 }
