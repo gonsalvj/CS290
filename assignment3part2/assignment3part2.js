@@ -1,5 +1,6 @@
 var favoriteGists = [];
 var searchResultGists = [];
+var selectedlanguages = [];
 
 window.onload = function() {
     loadFavoriteGists();
@@ -50,7 +51,6 @@ function GistObject() {
 	}
 }
 function getGistResults() {
-    var selectedlanguages = [];
     var ddl = document.getElementById("ddlPages");
     var page = ddl.options[ddl.selectedIndex].value;
     var checkboxes = document.getElementsByName('language');
@@ -63,9 +63,19 @@ function getGistResults() {
     fetchData(reqObject);
 }	
 
-function isSelectedLanguage(language)
+function isSelectedLanguage(files)
 {
-	return true;
+
+	for (var i in files) {
+		for (var j = 0; j < selectedlanguages.length; j++) {
+
+			if(files[i].language === selectedlanguages[j])
+			{
+				return true;
+			}
+		}
+	}
+	return false;
 }
 
 function isFavoriteGist(id)
