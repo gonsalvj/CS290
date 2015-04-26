@@ -77,7 +77,9 @@ function getGistResults() {
         }
     }
     var reqObject = new requestObject("GET", page, printData);
-    fetchData(reqObject);
+    for (var i = 1; i <= reqObject.page; i++) {
+   		 fetchData(reqObject, i);
+   	}
 }	
 
 function clearSearchResults() {
@@ -110,8 +112,8 @@ function isFavoriteGist(id) {
 	return false;
 }
 
-function fetchData(reqObject) {	 	
-  	for (var i = 1; i <= reqObject.page; i++) {
+function fetchData(reqObject, page) {	 	
+  //	for (var i = 1; i <= reqObject.page; i++) {
   		var httpRequest;
 	    if (window.XMLHttpRequest) { // Mozilla, Safari, IE7+ ...Note: IE6 not required
   	        httpRequest = new XMLHttpRequest();
@@ -124,10 +126,10 @@ function fetchData(reqObject) {
 		    	    reqObject.success(httpRequest.responseText);		    	    	    	    
 		    }	
 		}  	  
-		var url = reqObject.url + i;
-		httpRequest.open(reqObject.httpmethod, url, false);
+		var url = reqObject.url + page;
+		httpRequest.open(reqObject.httpmethod, url);
 		httpRequest.send();
-	}			
+	//}			
 }
 
 function createGitObjCollection(result, collection) {
