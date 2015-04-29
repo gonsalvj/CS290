@@ -68,31 +68,25 @@ if(isset($_GET['submit'])) {
 	}
 
 	function createTable($params) {
-    	echo "here we are!";
-    	echo "<table border='1' border-width:2px;'><tbody>";
 
-    	for ($i = $params['min-multiplicand']-1; $i <= $params['max-multiplicand']; $i++) {
-    		echo "<tr>";
-    		for ($j = $params['min-multiplier']-1; $j <= $params['max-multiplier']; $j++) {
-    		
-    			if ( $i < $params['min-multiplicand']) {
+		$width = $params['max-multiplier'] - $params['min-multiplier'] + 2;
+		$height = $params['max-multiplicand'] - $params['min-multiplicand'] + 2;
 
-    				if ( $j < $params['min-multiplier']) {
-    					echo "<td></td>";
-    				}
-    				else {
-    					echo "<td>".$j."</td>";
-    				}
-    			}
-    			else {
-    				echo "<td>".$i*$j."</td>";
-    			}
-    		}
-    		echo "</tr>";
-
-    	}
-
-    	echo "</tbody></table";
+	    echo "<table border='1'><thead><tr><th></th>";
+		for ($i=$params['min-multiplier'];$i<=$params['max-multiplier'];$i++)
+		{
+			echo    "<th>".$i."</th>";
+		}
+		echo "</tr></thead><tbody>";
+		for ($j=$params['min-multiplicand'];$j<=$params['max-multiplicand'];$j++) {
+			echo "<tr>";
+			echo  "<th>".$j."</th>";
+			for ($k=$params['min-multiplier'];$k<=$params['max-multiplier'];$k++) {
+				echo "<td>".$k*$j."</td>";
+			}
+			echo "</tr>";
+		}
+		echo "</tbody></table>";
     }
 
 ?>
