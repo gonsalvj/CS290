@@ -29,17 +29,17 @@ $method = $_SERVER["REQUEST_METHOD"];
 
  $request['Type'] = $method;
  
- if(count($options[$method])>0) {
- 	foreach ($options[$method] as $key => $value) {
- 		if(!isEmptyString($value)) {
- 			array_push($request['parameters'][$key] = $value);
- 		}
- } 
- }	
- else
- {
- 	$request['parameters'] = null;
- }
+ 
+foreach ($options[$method] as $key => $value) {
+	if(!isEmptyString($value)) {
+		array_push($request['parameters'][$key] = $value);
+	}
+} 
+if(count($request['parameters']) === 0) {
+	$request['parameters'] = null;
+}
+	
+
 
  echo json_encode($request);
 
