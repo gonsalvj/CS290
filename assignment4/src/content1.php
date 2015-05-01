@@ -1,8 +1,7 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+/*error_reporting(E_ALL);
+ini_set('display_errors', 1);*/
 session_start();
-
 /*Print greeting to screen*/
 function printGreeting() {
 	echo 'Hello '.$_SESSION['username'].' , you have visited this page '.$_SESSION['visits'].' times before.<br>';

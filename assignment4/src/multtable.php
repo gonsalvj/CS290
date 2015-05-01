@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+/*error_reporting(E_ALL);
+ini_set('display_errors', 1);*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,13 +26,15 @@ ini_set('display_errors', 1);
 $errorMsg = '';
 if(isset($_GET['submit'])) {
     $isValid = true;
+    //Create array of user inputs
    	$params = array(
             'min-multiplicand' => $_GET['min-multiplicand'],
 	        'max-multiplicand' => $_GET['max-multiplicand'],
 	    	'min-multiplier' => $_GET['min-multiplier'],
             'max-multiplier' => $_GET['max-multiplier'],
    		);
-
+   	//Ensure all values have been supplied by users - are numeric
+   	//and are greater than equal to zero
 	foreach ($params as $key => $val) {
 		        
         if (!empty($val)) {
@@ -45,17 +47,18 @@ if(isset($_GET['submit'])) {
 			$errorMsg .= "Missing parameter ".$key."<br>";
 		}
 	}
-
+	//Ensure min-multiplicand is less than max-multiplicand
 	if ($params['min-multiplicand'] >= $params['max-multiplicand']) {
 		$isValid = false;
 	    $errorMsg .= "Minimum multicand must be larger than maximum multiplicand.";
 	}
-
+	//Ensure min-multiplier is less than max-multiplier
 	if ($params['min-multiplier'] >= $params['max-multiplier']) {
 		$isValid = false;
 	    $errorMsg .= "Minimum multiplier must be larger than maximum multiplier.";
 	}      
 
+	//If inputs are valid, create HTML table, if not print errors
 	if ($isValid) {			
 		createTable($params);
 	}	
@@ -66,7 +69,7 @@ if(isset($_GET['submit'])) {
 	}
 
 }
-
+//Create HTML table based on validated inputs
 	function createTable($params) {
 
 		$width = $params['max-multiplier'] - $params['min-multiplier'] + 2;
