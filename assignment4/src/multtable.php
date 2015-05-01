@@ -20,6 +20,7 @@ ini_set('display_errors', 1);*/
 				</form>
 			</tbody>
 		</table>
+		<br>
 	</body>
 </html>
 <?php 
