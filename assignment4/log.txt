@@ -1,3 +1,9 @@
+Start: Fri, 1 May 2015 11:50:00 -0400
+End: Fri, 1 May 2015 12:10:01 -0400
+Tasks: cleaned up layout
+Tasks: updated text input to number
+Tasks: add worklog
+
 Start:Thu, 30 Apr 2015 22:00:00 -0400
 End: Thu, 30 Apr 2015 23:01:33 -0400
 Tasks: turned off error handling, minor refactoring
