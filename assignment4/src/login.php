@@ -20,7 +20,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'end') {
 }
 /*Check if user is logged in, if so print greeting, if not print login form*/
 if(isset($_SESSION['visits']) && isset($_SESSION['username'])) {
-	echo 'Hello '.$_SESSION['username'].' ,you are already logged in.<br>';
+	echo 'Hello '.$_SESSION['username'].', you are already logged in.<br>';
 	echo 'Click <a href="login.php?action=end">here</a> to logout.<br>';
 	echo 'Or visit: <br>  <a href="content1.php">content1.php</a> <br> <a href="content2.php">content2.php</a>';
 } else {
