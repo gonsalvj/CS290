@@ -1,0 +1,24 @@
+Start:Thu, 30 Apr 2015 22:00:00 -0400
+End: Thu, 30 Apr 2015 23:01:33 -0400
+Tasks: turned off error handling, minor refactoring
+Tasks: minor bug fix to table creation
+
+Start:Thu, 30 Apr 2015 13:00:00 -0400
+End: Thu, 30 Apr 2015 14:50:45 -0400
+Tasks: tested and commented loopback.php code
+Tasks: login tested - error handling on
+
+Start:Wed, 29 Apr 2015 11:00:00 -0400
+End: Wed, 29 Apr 2015 16:49:51 -0400
+Tasks: moved files to src folder
+Tasks: put everthing in src file, updated loopback to use built in PHP empty fun
+Tasks: cleaned up code format and remove html
+Tasks: minor bug fix
+Tasks: loopback.php testsed with multtable form
+Tasks: moved files to src folder
+Tasks: put everthing in src file, updated loopback to use built in PHP empty fun
+Tasks: cleaned up code format and remove html
+Tasks: minor bug fix
+Tasks: loopback.php testsed with multtable form
+Tasks: updated multtable complete and tested
+
