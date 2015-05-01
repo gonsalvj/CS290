@@ -12,10 +12,10 @@ ini_set('display_errors', 1);*/
 		<table>
 			<tbody>
 				<form action="multtable.php" method="get" enctype="multipart/form-data">
-				<tr><td>Enter min-multiplicand:</td><td><input name="min-multiplicand" type="text"></td></tr>
-				<tr><td>Enter max-multiplicand:</td><td><input name="max-multiplicand" type="text"></td></tr>
-				<tr><td>Enter min-multiplier:</td><td><input name="min-multiplier" type="text"></td></tr>
-				<tr><td>Enter max-multiplier:</td><td><input name="max-multiplier" type="text"></td></tr>
+				<tr><td>Enter min-multiplicand:</td><td><input name="min-multiplicand" type="number"></td></tr>
+				<tr><td>Enter max-multiplicand:</td><td><input name="max-multiplicand" type="number"></td></tr>
+				<tr><td>Enter min-multiplier:</td><td><input name="min-multiplier" type="number"></td></tr>
+				<tr><td>Enter max-multiplier:</td><td><input name="max-multiplier" type="number"></td></tr>
 				<tr><td> <input type="submit" name="submit" value="submit" /></td></tr>
 				</form>
 			</tbody>
