@@ -46,26 +46,26 @@ if(isset($_GET['submit'])) {
 		}
 	}
 
-	if ($params['min-multiplicand'] > $params['max-multiplicand']) {
-			$isValid = false;
-            $errorMsg .= "Minimum multicand must be larger than maximum multiplicand.";
-		}
-
-		if ($params['min-multiplier'] > $params['max-multiplier']) {
-			$isValid = false;
-            $errorMsg .= "Minimum multiplier must be larger than maximum multiplier.";
-		}      
-
-		if ($isValid) {			
-			createTable($params);
-		}	
-		else
-		{
-			echo "<p>Errors: <br>";
-			echo $errorMsg."</p>";
-		}
-
+	if ($params['min-multiplicand'] >= $params['max-multiplicand']) {
+		$isValid = false;
+	    $errorMsg .= "Minimum multicand must be larger than maximum multiplicand.";
 	}
+
+	if ($params['min-multiplier'] >= $params['max-multiplier']) {
+		$isValid = false;
+	    $errorMsg .= "Minimum multiplier must be larger than maximum multiplier.";
+	}      
+
+	if ($isValid) {			
+		createTable($params);
+	}	
+	else
+	{
+		echo "<p>Errors: <br>";
+		echo $errorMsg."</p>";
+	}
+
+}
 
 	function createTable($params) {
 
@@ -73,16 +73,18 @@ if(isset($_GET['submit'])) {
 		$height = $params['max-multiplicand'] - $params['min-multiplicand'] + 2;
 
 	    echo "<table border='1'><thead><tr><th></th>";
-		for ($i=$params['min-multiplier'];$i<=$params['max-multiplier'];$i++)
-		{
-			echo    "<th>".$i."</th>";
+		for ( $i = 0; $i < $width -1; $i++)
+		{   $sum = $i + $params['min-multiplier'];
+			echo    "<th>".$sum."</th>";
 		}
 		echo "</tr></thead><tbody>";
-		for ($j=$params['min-multiplicand'];$j<=$params['max-multiplicand'];$j++) {
+		for ( $j = 0; $j < $height -1; $j++) {
+			$sum = $j + $params['min-multiplicand'];
 			echo "<tr>";
-			echo  "<th>".$j."</th>";
-			for ($k=$params['min-multiplier'];$k<=$params['max-multiplier'];$k++) {
-				echo "<td>".$k*$j."</td>";
+			echo  "<th>".$sum."</th>";
+			for ( $k = 0; $k < $width -1; $k++) {
+				$product = $sum * ($k +$params['min-multiplier']);
+				echo "<td>".$product."</td>";
 			}
 			echo "</tr>";
 		}
