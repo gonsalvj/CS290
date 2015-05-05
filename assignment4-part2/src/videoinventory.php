@@ -13,7 +13,8 @@ $obj = new clsdbaccess();
 	</head>
 	<body>
 		
-		<table>
+		<table border="1">
+			<caption>Add new video</caption>
 			<tbody>
 				<form action="insertvideo.php" method="post" enctype="multipart/form-data">
 				<tr><td>Name:</td><td><input name="name" type="text">

@@ -28,9 +28,12 @@ if(isset($_POST['btnaddvideo'])) {
 		} 
 
 		if ($isValid) {			
-			$obj->addvideo($name, $category, $length);			
-			//redirect to inventory page 
-			header("Location: {$redirect}/videoinventory.php", true);	
+			$result = $obj->addvideo($name, $category, $length);	
+			if($result =='success') {
+				header("Location: {$redirect}/videoinventory.php", true);
+			} else {
+				header("Location: {$redirect}/videoinventory.php?errorMsg=$result", true);
+			}
 		} else {
 			header("Location: {$redirect}/videoinventory.php?errorMsg=$errorMsg", true);				
 		}

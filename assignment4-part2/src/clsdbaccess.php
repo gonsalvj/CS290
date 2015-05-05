@@ -37,6 +37,7 @@ class clsdbaccess
 	{
 		$obj = new clsdbaccess();
 		$mysqli = $obj->db_connect();
+		$result ='';
 
 		if(!($stmt = $mysqli->prepare("INSERT INTO videoinventory (name, category, length) VALUES (?,?,?)"))){
 			echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
@@ -45,14 +46,14 @@ class clsdbaccess
 			echo "Bind failed: "  . $stmt->errno . " " . $stmt->error;
 		}
 		if(!$stmt->execute()) {
-			echo "Execute failed: " . $mysqli->error;
-			$stmt->close();	
+			$result = "Execute failed: " . $mysqli->error;
+			
 		}
 		else {
-			$videoid = $stmt->insert_id;
-			$stmt->close();	
-			return $videoid;
-		}				
+			$result='success';
+		}		
+		$stmt->close();	
+		return $result;
 	}
 
 	/**
