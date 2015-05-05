@@ -36,7 +36,15 @@ $obj = new clsdbaccess();
 		<div>
 		<?php 
 		
-		$obj->getallvideos();
+		if(!isset($_GET['categories']) || $_GET['categories'] == 'ALL')  {
+			$obj->getallcateogories(null);		
+			$obj->getallvideos();	
+		} else {
+			$filter = $_GET['categories'];
+			$obj->getallcateogories($filter);
+			$obj->getfilteredvidoes($filter);
+		}
+		
 		?>
 		</div>
 		<div></div>

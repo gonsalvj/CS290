@@ -100,6 +100,72 @@ class clsdbaccess
 
 
 	/**
+	 * filtervideos
+	 *
+	 * Gets all and print (link/images) of all photos related to a specified babyid
+	 * @param babyid	 
+	 */	
+	function getfilteredvidoes($cat) {
+		$obj = new clsdbaccess();
+		$mysqli = $obj->db_connect();								
+		if(!($stmt = $mysqli->prepare("SELECT v.id, v.name, v.category, v.length, v.rented FROM videoinventory v WHERE v.category = ?"))){
+			echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
+		}	
+		if(!($stmt->bind_param("s",$cat))){
+				echo "Bind failed: "  . $stmt->errno . " " . $stmt->error;
+		}
+		if(!$stmt->execute()){
+			echo "Execute failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+		}
+		if(!$stmt->bind_result($id, $name, $category, $length, $rented)){
+			echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+		}		
+		
+		echo '<table border="1"><thead>';
+		echo '<th>Name</th>';
+		echo '<th>Category</th>';
+		echo '<th>Length</th>';
+		echo '<th>Rental Status</th>';
+		echo '<th>Delete?</th>';
+		echo '<th>Checkin/Checkout</th>';
+		echo '</thead>';		
+		echo '<tbody>';
+
+		while($stmt->fetch()) {
+
+			$status = $rented;
+			if($rented === 1) {
+				$rented = 'available';
+			} else {
+				$rented = 'checked out';
+			}
+
+			echo "<tr>";
+			echo "<td>".$name."</td>";
+			echo "<td>".$category."</td>";
+			echo "<td>".$length."</td>";
+			echo "<td>".$rented."</td>";
+			echo "<td><form method='post' action='deletevideo.php'>";
+			echo "<input type='hidden' name='id' value='".$id."'/>";
+			echo "<input type='submit' name ='btndeletevideo' value='Delete'/>";
+			echo "</form>";
+			echo "<td><form method='post' action='updatestatus.php'>";
+			echo "<input type='hidden' name='id' value='".$id."'>";
+			echo "<input type='hidden' name='status' value='".$status."'>";
+			echo "<input type='submit' name='btnupdatestatus' value='Checkin/Checkout'/>";
+		 	echo "</form>";			
+			echo "</tr>";
+		}
+		echo '</tbody></table>';
+		echo '<br>';	
+		echo "<form method='post' action='deleteallvideos.php'>";
+		echo "<input type='submit' name='btndeleteallvideos' value='Delete All Videos'/>";
+		echo "</form>";	
+	
+		$stmt->close();				
+	}
+
+	/**
 	 * getallcateogories
 	 *
 	 * Gets all and print (link/images) of all photos related to a specified babyid
@@ -108,7 +174,7 @@ class clsdbaccess
 	function getallcateogories($cat) {
 		$obj = new clsdbaccess();
 		$mysqli = $obj->db_connect();								
-		if(!($stmt = $mysqli->prepare("SELECT v.category FROM videoinventory v"))){
+		if(!($stmt = $mysqli->prepare("SELECT DISTINCT v.category FROM videoinventory v"))){
 			echo "Prepare failed: "  . $stmt->errno . " " . $stmt->error;
 		}	
 		if(!$stmt->execute()){
@@ -117,16 +183,23 @@ class clsdbaccess
 		if(!$stmt->bind_result($category)){
 			echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
 		}		
-		
+		echo "<form action='videoinventory.php' method='get'>";
 		echo '<select name="categories">';
 		while($stmt->fetch()) {
 			if ($cat == $category) {
-
+				echo "<option value='".$category."' selected='selected'>".$category."</option>";
+			} else {
+				echo "<option value='".$category."'>".$category."</option>";
 			}
-
 		}
-	
-	
+		if (is_null($cat)) {
+			echo "<option value='ALL' selected='selected'>SHOW ALL</option>";
+		} else {
+			echo "<option value='ALL'>SHOW ALL</option>";
+		}
+		echo '</select>';
+		echo '&nbsp;&nbsp;<input type = "submit" name = "btnfilter" value="Filter">';
+		echo '</form><br>';	
 		$stmt->close();				
 	}
 
