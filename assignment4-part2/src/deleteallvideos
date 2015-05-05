@@ -1,7 +1,0 @@
-<?php
-
-if(isset($_POST['btndeleteallvideos'])) {		
-		$obj->deleteallvideos();	
-		header("Location: {$redirect}/videoinventory.php", true);	
-}
-?>
