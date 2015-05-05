@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS `videoinventory`;
+
+CREATE TABLE IF NOT EXISTS videoinventory(
+id INT( 11 ) NOT NULL AUTO_INCREMENT ,
+name VARCHAR( 255 ) NOT NULL ,
+category VARCHAR( 255 ) ,
+length INT(3) unsigned,
+rented BOOLEAN NOT NULL DEFAULT 1,
+PRIMARY KEY (id),
+UNIQUE KEY (name)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
