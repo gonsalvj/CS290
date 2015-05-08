@@ -1,3 +1,7 @@
+Start: Thu, 7 May 2015 23:00:00 -0400
+End: Thu, 7 May 2015 23:19:17 -0400
+Tasks: tested, fixed failing minor failing code
+
 Start: Thu, 7 May 2015 21:15:00 -0400
 End: Thu, 7 May 2015 21:30:13 -0400
 Tasks: delete extra div
