@@ -19,7 +19,7 @@ if(isset($_POST['btnaddvideo'])) {
 			$errorMsg = 'Name cannot be empty.<br>';
 		}
 		if (!empty($length)) {
-			if (!is_numeric($length)) || $length < 0) {
+			if (!is_numeric($length) || $length < 0) {
 			$isValid = false;
 			$errorMsg .= 'Length must be a positive number.<br>';
 			}

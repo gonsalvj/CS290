@@ -183,27 +183,34 @@ class clsdbaccess
 		}
 		if(!$stmt->bind_result($category)){
 			echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
-		}		
+		}	
+		$stmt->store_result();
+		$numrows = $stmt->num_rows;
 		echo "<form action='videoinventory.php' method='get'>";
 		echo '<select name="categories">';
-		while($stmt->fetch()) {
-			if ($cat == $category) {
-				echo "<option value='".$category."' selected='selected'>".$category."</option>";
-			} else {
-				echo "<option value='".$category."'>".$category."</option>";
+		if($numrows > 0)
+		{
+			
+			while($stmt->fetch()) {
+				if(!empty($category)) {
+					if ($cat == $category) {
+						echo "<option value='".$category."' selected='selected'>".$category."</option>";
+					} else {
+						echo "<option value='".$category."'>".$category."</option>";
+					}
+				}				
 			}
-		}
-		if (is_null($cat)) {
-			echo "<option value='ALL' selected='selected'>SHOW ALL</option>";
-		} else {
-			echo "<option value='ALL'>SHOW ALL</option>";
-		}
+			if (is_null($cat)) {
+				echo "<option value='ALL' selected='selected'>ALL</option>";
+			} else {
+				echo "<option value='ALL'>ALL</option>";
+			}			
+		}	
 		echo '</select>';
 		echo '&nbsp;&nbsp;<input type = "submit" name = "btnfilter" value="Filter">';
 		echo '</form><br>';	
 		$stmt->close();				
 	}
-
 
 	/**
 	 * getallvidos
