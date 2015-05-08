@@ -18,13 +18,11 @@ if(isset($_POST['btnaddvideo'])) {
 			$isValid = false;
 			$errorMsg = 'Name cannot be empty.<br>';
 		}
-		if (empty($category)) {
-			$isValid = false;
-			$errorMsg .= 'Category cannot be empty.<br>';
-		}
-		if (empty($length) || (!is_numeric($length)) && $length > 0) {
+		if (!empty($length)) {
+			if (!is_numeric($length)) || $length > 0) {
 			$isValid = false;
 			$errorMsg .= 'Length must be a positive number.<br>';
+			}
 		} 
 
 		if ($isValid) {			
