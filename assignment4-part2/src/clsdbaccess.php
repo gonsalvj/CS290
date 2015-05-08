@@ -103,8 +103,8 @@ class clsdbaccess
 	/**
 	 * filtervideos
 	 *
-	 * Gets all and print (link/images) of all photos related to a specified babyid
-	 * @param babyid	 
+	 * get all videos with specified categories
+	 * @param cat	 
 	 */	
 	function getfilteredvidoes($cat) {
 		$obj = new clsdbaccess();
@@ -169,8 +169,8 @@ class clsdbaccess
 	/**
 	 * getallcateogories
 	 *
-	 * Gets all and print (link/images) of all photos related to a specified babyid
-	 * @param babyid	 
+	 * Gets categories, set selected option for dropdown
+	 * @param cat	 
 	 */	
 	function getallcateogories($cat) {
 		$obj = new clsdbaccess();
@@ -208,8 +208,8 @@ class clsdbaccess
 	/**
 	 * getallvidos
 	 *
-	 * Gets all and print (link/images) of all photos related to a specified babyid
-	 * @param babyid	 
+	 * gets all records in video inventory
+	 * @param none	 
 	 */	
 	function getallvideos() {
 		$obj = new clsdbaccess();
@@ -271,9 +271,9 @@ class clsdbaccess
 	/**
  * updaterentedstatus
  *
- * Updates a baby record with photo_id
+ * Updates rented column of videoinventory table at specified id
  *
- * @param babyid, photoid
+ * @param id
  * @return no return
  */	
 	function updaterentedstatus($id, $status)
