@@ -1,0 +1,21 @@
+Start: Thu, 7 May 2015 21:17:30 -0400
+End: Thu, 7 May 2015 21:17:30 -0400
+Tasks: delete extra div
+Tasks: completed work log
+
+Start: Tue, 5 May 2015 13:10:00 -0400
+End: Tue, 5 May 2015 13:24:08 -0400
+Tasks: fixed error handling for insert
+
+Start: Tue, 5 May 2015 11:00:00 -0400
+End: Tue, 5 May 2015 12:45:45 -0400
+Tasks: filter working - refactoring and commenting still needed
+Tasks: removing unnecessary file
+
+Start:Tue, 5 May 2015 09:00:00 -0400
+End: Tue, 5 May 2015 11:28:08 -0400
+Tasks: everything done except filtering, including delete, and checkin/checkout
+
+Start: Mon, 4 May 2015 12:30:00 -0400
+End: Mon, 4 May 2015 4:00:00 -0400
+Tasks: (forgot to commit) Created HTML, database connection, required SQL queries/class, add insert (without validation)
