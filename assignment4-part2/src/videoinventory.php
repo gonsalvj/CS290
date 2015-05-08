@@ -48,7 +48,6 @@ $obj = new clsdbaccess();
 		
 		?>
 		</div>
-		<div></div>
 	</body>
 </html>
 
