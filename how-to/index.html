@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>How-to-guide: WCF</title>
+   
+    <link href="style.css" rel="stylesheet">
+   
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">How-To-Guide: Windows Communication Foundation</a>
+            </div>
+            <!-- /.navbar-header -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i>Introduction</a>
+                        </li>                        
+                        <li>
+                            <a href="components.html"><i class="fa fa-bar-chart-o fa-fw"></i>Components of WCF Service</a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="datacontract.html">Data Contract</a>
+                                </li>
+                                <li>
+                                    <a href="operationcontract.html">Service & Operation Contract</a>
+                                </li>
+                                   <li>
+                                    <a href="implementservice.html">Implementing your service</a>
+                                </li>
+                              <li>
+                                    <a href="serviceconfig.html">Some notes on Service Configuration</a>
+                                </li>
+
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="consumeservice.html"><i class="fa fa-table fa-fw"></i> Consuming a WCF Service</a>
+                        </li>        
+                           <li>
+                            <a href="resources.html"><i class="fa fa-table fa-fw"></i> Additional Resources</a>
+                        </li>  
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Introduction: Windows Communication Foundation for Beginners</h1>
+                </div>
+        <p>This tutorial is meant for new developers.  Though there are resources available that outline Windows Communication Foundation, they are quite complex and geared towards intermediate/expert developers.  This how-to-guide is meant help beginner developers get a WCF service up and running.  Its primary focus is work through the abstraction and understand the components of creating and consuming a WCF service. </p>
+        <p>Windows Communication Foundation is a Microsoft framework designed to enable developers to create service-oriented applications.  There are several benefits of using the WCF framework over web services, namely communication can happen over several different protocols including (but not limited to) HTTP, TCP, and IPC.  A WCF Service can also be hosted in many ways leveraging Internet Information Services (IIS), inside a Windows service or self hosted.  <p>
+
+    <p>        As outlined on msdn, below is a list of typical applications of WCF: 
+
+        <ul>
+            <li>A secure service to process business transactions.</li>
+            <li>A service that supplies current data to others, such as a traffic report or other monitoring service.</li>
+            <li>A chat service that allows two people to communicate or exchange data in real time.</li>
+            <li>A dashboard application that polls one or more services for data and presents it in a logical presentation.</li>
+            <li>Exposing a workflow implemented using Windows Workflow Foundation as a WCF service.</li>   
+        </ul>
+        </p>
+        <p>This site is meant to be an introduction to Windows Communication Foundation.  It will provide an overview of service contracts, operation contracts and data contracts as well as consuming a web service.  It will not discuss indepth configuration options pertaining to security, transmission and authentication.  To learn more about these more advanced features of WCF, please see the Additional Resources section.  
+        <img src="WCF1.jpg"/><br>
+        <a href="http://www.c-sharpcorner.com/UploadFile/dhananjaycoder/four-steps-to-create-first-wcf-service-for-beginners/Images/WCF1.jpg" target="_blank">Photo reference</a><br>
+        Note: All sample code is written in c#. </p>
+            </div>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+</body>
+</html>

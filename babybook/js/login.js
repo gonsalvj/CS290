@@ -2,6 +2,7 @@ $(document).ready(function(){
 $("#add_error").css('display', 'none', 'important');
 
 $("#login").click(function(e){
+         
           var isValid = validate(e);
           if(isValid) {
             username=$("#username").val();

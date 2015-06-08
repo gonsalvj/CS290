@@ -32,7 +32,7 @@
                 <div class="categories">
                 <h3>Login</h3><br/>
                 <div class="add_error" id="add_error"></div>
-                <form method="post" action="./">
+                <form id="loginform" method="post" action="./">
                 
                 <p class="login_line">Email/Login:</p>
                 <p class="login_line"><input id="username" name="username" type="text" size="20" /></p></br>

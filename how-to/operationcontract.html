@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>How-to-guide: WCF</title>
+   
+    <link href="style.css" rel="stylesheet">
+   
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">How-To-Guide: Windows Communication Foundation</a>
+            </div>
+            <!-- /.navbar-header -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i>Introduction</a>
+                        </li>                        
+                        <li>
+                            <a href="components.html"><i class="fa fa-bar-chart-o fa-fw"></i>Components of WCF Service</a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="datacontract.html">Data Contract</a>
+                                </li>
+                                <li>
+                                    <a href="operationcontract.html">Service & Operation Contract</a>
+                                </li>
+                                   <li>
+                                    <a href="implementservice.html">Implementing your service</a>
+                                </li>
+                              <li>
+                                    <a href="serviceconfig.html">Some notes on Service Configuration</a>
+                                </li>
+
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="consumeservice.html"><i class="fa fa-table fa-fw"></i> Consuming a WCF Service</a>
+                        </li>        
+                           <li>
+                            <a href="resources.html"><i class="fa fa-table fa-fw"></i> Additional Resources</a>
+                        </li>  
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Service and Operation Contracts</h1>
+                </div>
+                <p>The next step in implementing a WCF service is to define the service and operation contracts.  Similar to defining the data contract, this is accomplished by decorating our entities with specific attributes, namely <a href="https://msdn.microsoft.com/en-us/library/system.servicemodel.servicecontractattribute%28v=vs.110%29.aspx" target="_blank">ServiceContractAttribute</a> and <a href="https://msdn.microsoft.com/en-us/library/system.servicemodel.operationcontractattribute%28v=vs.110%29.aspx" target="_blank">OperationContractAttribute</a>.</p>
+
+                <p>The service contract essentially exposes a number of operations or 'calls' that will be available to a client.  This is usually done via an interface but can be done using a regular class.</p>
+
+                <p>In order for the client to be able to make calls to specific operations within the service contract, method signatures within the interface must also be decorated by an attribute, [Operation Contract].  In this way, the client is not concerned with the implementation of the service, they only need to know what operations/calls are available.</p>
+
+                <p>Below is a sample Service contract with Operation contracts for a weather service.</p>
+
+<pre><code>
+[Service Contract]
+public interface IForecast {
+
+[OperationContract]
+int getForecastInCelcius(string city);
+
+[OperationContract]
+int getForecastInFarenheit(string city);
+
+[OperationContract]
+int getProbabilityofPreciptation(string city);
+} </code>               
+</pre>
+
+            </div>
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+</body>
+</html>

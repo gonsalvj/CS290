@@ -1,4 +1,4 @@
-function validate(e) {
+function validate(e, form) {
 	var isValid = true;
 	e.preventDefault();
     $(":input").not("[type=submit], .optional").removeClass('error').each(function () {

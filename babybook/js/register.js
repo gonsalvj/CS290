@@ -30,7 +30,7 @@ $("#register").click(function(e){
               } else {
                 $("#register_error").css('display', 'inline', 'important');
                 $("#register_error").css('color', 'red');
-                $("#register_error").html(html);
+                $("#register_error").html("An error with your registration has occured.  Please contact your administrator.");
               }
         }});
       }
